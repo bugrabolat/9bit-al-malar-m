@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Urun ekle</title>
+    <style>
+      nav {
+        background-color: black;
+        height: 50px;
+        align-items: center;
+        padding-left: 10px;
+      }
+      nav h5 {
+        color: white;
+      }
+      #dropdownMenuButton1 {
+        float: right;
+        margin-right: 10px;
+      }
+      .right-sidebar {
+        background-color: gray;
+        width: 15%;
+        height: 1000px;
+      }
+      a {
+        text-decoration: none;
+        color: azure;
+      }
+      .list-group a {
+        background-color: gray;
+        color: aliceblue;
+      }
+      .container {
+        margin-top: 50px;
+      }
+      img {
+        width: 50px;
+        height: auto;
+      }
+      .table td {
+        padding-top: 30px;
+      }
+      .table td p {
+        position: relative;
+        top: 10px;
+      }
+      .form-check {
+        padding-left: 100px;
+      }
+      #add-item {
+        margin-bottom: 30px;
+      }
+      input {
+        margin-bottom: 30px;
+      }
+      .form-floating {
+        margin-bottom: 30px;
+      }
+      .btn {
+        margin-left: 10px;
+      }
+      span {
+        margin-left: 10px;
+      }
+      li a {
+        color: black;
+      }
+      li a:hover {
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="row">
+      <h5 class="col">Yönetim Paneli</h5>
+      <div class="dropdown col">
+        <button
+          class="btn btn-warning dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-user"></i> Admin
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Çıkış yap</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="body row">
+      <div class="right-sidebar col-6">
+        <div class="list-group">
+          <a
+            href="users-admin.html"
+            class="list-group-item list-group-item-action"
+            aria-current="true"
+          >
+            <i class="fa-solid fa-users"></i> Kullanıcılar
+          </a>
+          <a
+            href="admin-paneli.html"
+            class="list-group-item list-group-item-action"
+            ><i class="fa-solid fa-house"></i> Ana sayfa
+          </a>
+          <a
+            href="urunler-admin.html"
+            class="list-group-item list-group-item-action active"
+            ><i class="fa-solid fa-cart-shopping"></i> Ürünler</a
+          >
+        </div>
+      </div>
+      <div class="container col-6 card">
+        <div
+          style="
+            --bs-breadcrumb-divider: url(
+              &#34;data:image/svg + xml,
+              %3Csvgxmlns='http://www.w3.org/2000/svg'width='8'height='8'%3E%3Cpathd='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z'fill='%236c757d'/%3E%3C/svg%3E&#34;
+            );
+          "
+          aria-label="breadcrumb"
+        >
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Ürünler</a></li>
+            <li class="breadcrumb-item"><a href="#">Ürün listesi</a></li>
+            <li class="breadcrumb-item active">Ürün güncelle</li>
+          </ol>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <h5>Resim yükle</h5>
+            <input type="file" />
+          </div>
+          <div class="col-6">
+            <h5>Ürün ismi</h5>
+            <input
+              type="text"
+              placeholder="Ürün ismi"
+              id="productname"
+              value=""
+            />
+          </div>
+          <div class="col-6">
+            <h5>Ürün kodu</h5>
+            <input type="text" placeholder="Ürün kodu" id="productcode" />
+          </div>
+          <div class="col-6">
+            <h5>Ürün Adeti</h5>
+            <input type="text" id="product-stock" placeholder="Ürün Fiyatı" />
+          </div>
+          <div class="col-6" style="padding-right: 30px">
+            <h5>Ürün bedenleri</h5>
+            <input
+              type="text"
+              placeholder="Ürün Bedeni"
+              id="urun-beden"
+              onkeypress="onBlurBeden(event)"
+            />
+          </div>
+          <div class="col-6">
+            <h5>Ürün fiyatı</h5>
+            <input type="text" placeholder="Ürün Fiyatı" id="productprice" />
+          </div>
+          <div class="col-6">
+            <td><ul id="list"></ul></td>
+          </div>
+        </div>
+        <h5>Ürün açıklama</h5>
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            placeholder="Leave a comment here"
+            id="floatingTextarea2"
+            style="height: 100px"
+          ></textarea>
+          <label for="floatingTextarea2" id="productdescription"
+            >Ürün açıklama</label
+          >
+        </div>
+        <div class="button-section row">
+          <button class="btn btn-danger col-1">Sil</button>
+          <button class="btn btn-success col-2" onclick="guncelle()">
+            Güncelle
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      var urun = {
+        id: location.search.slice(1).split("=")[1],
+        title: null,
+        description: null,
+        code: null,
+        price: null,
+        size: null,
+        stock: null,
+      };
+
+      var productName = null;
+      var productCode = null;
+      var productPrice = null;
+      var productDescription = null;
+      var bedenValue = null;
+      var productStock = null;
+
+      window.onload = function () {
+
+        bedenValue = document.getElementById("urun-beden");
+        productName = document.getElementById("productname");
+        productCode = document.getElementById("productcode");
+        productPrice = document.getElementById("productprice");
+        productDescription = document.getElementById("floatingTextarea2");
+        productStock = document.getElementById("product-stock");
+
+        $.ajax({
+          url: `http://192.168.1.2:4537/products/${urun.id}`,
+          method: "GET",
+          success: (res) => {
+            urun = res.data;
+            productName.value = urun.title;
+            productCode.value = urun.code;
+            productPrice.value = urun.price;
+            productDescription.innerText = urun.description;
+            productStock.value = urun.stock
+            urun.size = JSON.parse(urun.size);
+            console.log("URUN in Get => ", urun);
+
+            for (let i = 0; i < urun.size.length; i++) {
+              console.log(typeof urun.size[i]);
+              if (typeof urun.size[i] !==  "string") {
+              console.log(typeof urun.size[i]);
+              urun.size[i] = String(urun.size[i]);
+                console.log(typeof urun.size[i]);
+              }
+            }
+            urun.size.forEach((el) => {              
+              const olusturspan = document.createElement("span");
+              olusturspan.className = "badge rounded-pill text-bg-secondary";
+              olusturspan.ariaValueText = el;
+              olusturspan.innerHTML = el;
+              document.getElementById("list").appendChild(olusturspan);
+              const olusturbutton = document.createElement("button");
+              olusturbutton.className = "btn-close btn-close-white";
+              olusturbutton.onclick = function () {
+                document.getElementById("list").removeChild(olusturspan);
+                urun.size.splice(urun.size.indexOf(olusturspan.ariaValueText), 1);
+              };
+              olusturspan.appendChild(olusturbutton);
+            });
+          },
+          error: function (err) {
+            console.log(err);
+          },
+        });
+
+      };
+
+      function onBlurBeden(e) {
+        if (e.keyCode == 13) {
+          const olusturspan = document.createElement("span");
+          olusturspan.className = "badge rounded-pill text-bg-secondary";
+          olusturspan.innerHTML = bedenValue.value;
+          olusturspan.ariaValueText = bedenValue.value;
+          document.getElementById("list").appendChild(olusturspan);
+          const olusturbutton = document.createElement("button");
+          olusturbutton.className = "btn-close btn-close-white";
+          olusturbutton.onclick = function () {
+            document.getElementById("list").removeChild(olusturspan);
+                urun.size.splice(urun.size.indexOf(olusturspan.ariaValueText), 1);
+          };
+          olusturspan.appendChild(olusturbutton);
+          urun.size.push(bedenValue.value);
+          bedenValue.value = "";
+        }
+      }
+      
+
+      function guncelle() {
+        console.log("URUN güncelle başı", urun);
+        urun.code = productCode.value;
+        urun.title = productName.value;
+        urun.price = productPrice.value;
+        urun.description = productDescription.value;
+        urun.stock = productStock.value;
+        urun.size = JSON.stringify(urun.size);
+
+        $.ajax({
+          url: "http://192.168.1.2:4537/products",
+          method: "PUT",
+          contentType: "application/json",
+          data: JSON.stringify(urun),
+          success: (res) => {
+            if(res.status === "ok"){
+            Swal.fire({
+                  position: "center",
+                  icon: "success",
+                  title: "Ürün Başarılı bir şekilde Güncellendi",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+              }
+          },
+          error: (err) => {
+            console.log(err);
+          },
+        });
+
+        console.log("URUN güncelle sonu", urun);
+        urun.size = JSON.parse(urun.size);
+
+      }
+
+    </script>
+  </body>
+</html>
