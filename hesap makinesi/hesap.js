@@ -3,7 +3,7 @@ var first = '';
 var second = '';
 var selectedOpr = " ";
 var sonuc = '';
-
+var step = false;
 
 function onClickButton(element, x) {
   if (screen.value == 0) {
@@ -40,26 +40,23 @@ function onClickButton(element, x) {
     case '9':
       screen.value += element.value;
       break;
+    case '.':
+      screen.value += element.value;
+      break;
   }
-  if (selectedOpr == " " || first == '') {
+  if (selectedOpr == " ") {
     first += element.value;
-  } else if (selectedOpr != " " || first !== '') {
-    second += element.value;
-  }
-  if(first ==''){
-    first += element.value;
+  } else if (selectedOpr !== " " && first !== '') {
+    second += element.value
   }
 }
 
 function onClickClearButton() {
-  screen.value = " ";
-  first = "";
+  screen.value = "";
+  first = '';
   selectedOpr = " ";
   second = '';
-
-}
-
-function onClickPositiveButton() {
+  sonuc = '';
 
 }
 
@@ -77,23 +74,50 @@ function onClickSepelator(element, y) {
     case "/":
       selectedOpr = element.value;
       break;
+    case "%":
+      selectedOpr = element.value;
+      break;
   }
-  screen.value = " ";
-}
 
+  screen.value += element.value;
+
+}
+function onClickPositiveButton() {
+  if (Number(first) > 0 && selectedOpr == " ") {
+    first = -Math.abs(Number(first));
+    screen.value = first;
+  } else if (Number(first) < 0 && selectedOpr == " ") {
+    first = Math.abs(Number(first));
+    screen.value = first;
+  };
+  if (Number(second) > 0 && selectedOpr !== " ") {
+    second = -Math.abs(Number(second));
+    screen.value = second;
+  } else if (Number(second) < 0 && selectedOpr !== " ") {
+    second = Math.abs(Number(second));
+    screen.value = second;
+  }
+}
+function yuzde() {
+  screen.value = Number(first) / 100;
+}
 function hesapla() {
   if (selectedOpr == "+") {
     sonuc = Number(first) + Number(second);
-  }else if (selectedOpr == "-") {
+  } else if (selectedOpr == "-") {
     sonuc = Number(first) - Number(second);
-  }else if (selectedOpr == "*") {
+  } else if (selectedOpr == "*") {
     sonuc = Number(first) * Number(second);
-  }else if (selectedOpr == "/") {
+  } else if (selectedOpr == "/") {
     sonuc = Number(first) / Number(second);
-  }
+  };
+
+
+  first = sonuc
+
 
   screen.value = sonuc;
-  console.log(first+second);
-  console.log(first);
 
+
+  second = '';
 }
