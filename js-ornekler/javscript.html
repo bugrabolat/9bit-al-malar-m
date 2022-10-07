@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>java script örnek 1</title>
+  </head>
+  <body>
+    <script>
+      // var ad = prompt('ad giriniz');
+      // var ogrencino = prompt('öğrenci numaranızı giriniz');
+      // var cinsiyet = prompt('cinnsiyeti giriniz');
+      // var yazılınotu1 = prompt('1. notunuzu giriniz');
+      // var yaazılınotu2 = prompt('2. yazılı notunuzu giriniz');
+      // var ortalama = (Number(yazılınotu1)+Number(yaazılınotu2))/2
+
+      // console.log(ortalama);
+
+      // var a = prompt ('sayı giriniz : ');
+      // var b = prompt ('sayı giriniz : ');
+      // var c = prompt ('sayı giriniz : ');
+
+      // console.log('a sayısı en büyük mü : ',(a>b) && (a>c));
+      // console.log('b sayısı en büyük mü : ',(b>a) && (b>c));
+      // console.log('c sayısı en büyük mü : ',(c>a) && (c>b));
+
+      // for(var i =10; i<=100; i++){
+      //     console.log(i)
+      // }
+
+      // var i=10;
+      // while(i<=100){
+      //     console.log(i);
+      //     i=i+5;
+      // }
+
+      //     var k_username = "guest";
+      //     var k_password = "12345";
+      //     var loggin = false;
+
+      //     while (loggin == false){
+
+      //     var username = prompt ("kullanıcı adı giriniz :");
+      //     var password = prompt ("şifre giriniz :");
+
+      //     if((username == k_username) && (password == k_password)){
+      //         console.log("giriş yapıldı");
+      //        var loggin = true;
+      //     }
+      //     else {
+      //         console.log("kulanıcı adı ve ya parola yanlış");
+      //     }
+      // }
+
+      // var now =  2022;
+      // var models = ['toyota','mazda','mercedes','opel'];
+      // var years = ['2015','2012','2016','2014'];
+
+      // for(var i=0;i<models.length;i++){
+      //     console.log(models[i]);
+      // }
+
+      // var model = prompt("model giriniz :");
+      // var yıl = prompt("model yılı giriniz :");
+
+      // models.push(model);
+      // years.push(yıl);
+      // for(var i=0; i<models.length;i++){
+      //      console.log(models[i]+' '+years[i]+' model ve '+(now-years[i])+' yaşında bir aaraçtır.');
+      //  }
+
+      //   var personel = [
+      //     {
+      //       ad: "ali",
+      //       soyad: "yılmaz",
+      //       cinsiyet: "Erkek",
+      //       telefon: "026238384",
+      //       adres: "izmit Kocaeli",
+      //       meslek: "bilgisayar mühendisi",
+      //       diller: ["ingilizce", "almanca"],
+      //       hobiler: ["sinema", "spor", "kitap okumak"],
+    
+      //     },
+      //     {
+      //       ad: "buğra",
+      //       soyad: "bolat",
+      //       cinsiyet: "Erkek",
+      //       telefon: "026238384",
+      //       adres: "İstanbul Güngöre",
+      //       meslek: "bilgisayar mühendisi",
+      //       diller: ["ingilizce", "almanca", "rusça"],
+      //       hobiler: "sinema , spor , kitap okumak",
+      //     },
+      //     {
+      //       ad: "aslı",
+      //       soyad: "duru",
+      //       cinsiyet: "Kadın",
+      //       telefon: "026238384",
+      //       adres: "Ankara Ulus",
+      //       meslek: "inşaat mühendisi",
+      //       diller: ["ingilizce", "almanca", "fransızca"],
+      //       hobiler: "sinema , spor , kitap okumak",
+      //     },
+      //   ];
+      //   console.log(personel[0].diller.length);
+
+      //   personel.forEach(function (hobi) {
+      //     console.log(hobi.ad+' '+hobi.soyad);
+
+      //     hobi.diller.forEach(function (dil) {
+      //       console.log(dil);
+      //     });
+      //   });
+
+      // function tekcift(sayi){
+      //     if(sayi%2==0){
+      //         return true;
+      //     }else {
+      //         return false;
+      //     }
+      // }
+      // if (tekcift(10)){
+      //             console.log('sayı çift')
+      //          }else{
+      //              console.log('sayı tektir')
+      //          }
+
+      // var sayi = tekcift(10);
+      //     console.log(sayi);
+
+      // function faktoriyel (sayi){
+      //     var sonuc = 1;
+
+      //     for(var i =2;i<=sayi;i++){
+      //         sonuc*=i;
+      //     }
+      //     return sonuc;
+      // }
+
+      // console.log(faktoriyel(5));
+
+      // var modeller = ['opel','mazda','toyota'];
+
+      //  function yazdir (dizi){
+      //    dizi.forEach(function(item){
+      //       console.log(item);
+      //    });
+      //  }
+      //   yazdir(modeller);
+
+      // var cumle =
+      //   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, iste.";
+
+      // var maxkarakter = 20;
+      // var ozetcumle = [];
+ 
+      // console.log(maxkarakter + ' > ' + cumle.length);
+      // if (maxkarakter > cumle.lenght) {
+      //   consol.log(cumle);
+      // } else {
+      //   var kelimeler = cumle.split(' ');
+
+      //   var toplamkarakter = 0;
+
+      //   for (var i = 0; i < kelimeler.lenght; i++) {
+      //     ozetcumle.unshift(kelimeler[i]);
+      //     toplamkarakter += kelimeler[i].length;
+
+      //     if (toplamkarakter > maxkarakter) {
+      //       break;
+      //     }
+      //   }
+      // }
+      // console.log(ozetcumle);
+    </script>
+  </body>
+</html>
