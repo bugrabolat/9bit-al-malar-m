@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Document</title>
+    <style>
+        .box{
+            margin-top: 10px;
+            border: 2px dashed #666;
+            width: 200px;
+            height: 200px;
+            background-color: beige;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ title }}</h1>
+        <p>{{content}}</p>
+        <a target="_blank" v-bind:href="url">Youtubeye git</a>
+        <br>
+        <br>
+        <button v-on:click="changeTitle('Bu 1. buton')">Title değiştir</button>
+        <button v-on:click="changeTitle('Bu 2. buton')">Title 2 değiştir</button>
+        <div @mousemove="updateCoords('mouseMoove',$event)" class="box" @click="changeTitle('box dan gelen yazı')"></div>
+        <span>{{ coords.x }},{{ coords.y }}</span>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
