@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derslerin ortalamalarını alma</title>
+        <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <form action="#">
+    <table border="2px">
+        <tr>
+            <th>Dersler</th>
+            <td>Matematik</td>
+            <td>Türkçe</td>
+            <td>Tarih</td>
+            <td>Edebiyat</td>
+            <td>Dil Bilgisi</td>
+        </tr>
+        <tr>
+            <th>Sınav1</th>
+            <td>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control input" id="mSinav1" placeholder="Not 1">
+                    <label for="mSinav1">Not 1</label>
+                </div>
+            </td>
+            <td>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control input" id="tSinav1" placeholder="Not 1">
+                    <label for="tSinav1">Not 1</label>
+                </div>
+            </td>
+            <td>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control input" id="taSinav1" placeholder="Not 1">
+                    <label for="taSinav1">Not 1</label>
+                </div>
+            </td>
+            <td>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control input" id="eSinav1" placeholder="Not 1">
+                    <label for="eSinav1">Not 1</label>
+                </div>
+            </td>
+            <td>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control input" id="dSinav1" placeholder="Not 1">
+                    <label for="dSinav1">Not 1</label>
+                </div>
+            </td>
+
+        </tr>
+        <tr>
+            <th>Sınav2</th>
+            <td>   
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control input" id="mSinav2" placeholder="Not 2">
+                    <label for="mSinav2">Not 2</label>
+                </div>
+            </td>
+            <td>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control input" id="tSinav2" placeholder="Not 2">
+                    <label for="tSinav2">Not 2</label>
+                </div>
+            </td>
+            <td>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control input" id="taSinav2" placeholder="Not 2">
+                    <label for="taSinav2">Not 2</label>
+                </div>
+            </td>
+            <td>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control input" id="eSinav2" placeholder="Not 2">
+                    <label for="eSinav2">Not 2</label>
+                </div>
+            </td>
+            <td>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control input" id="dSinav2" placeholder="Not 2">
+                    <label for="dSinav2">Not 2</label>
+                </div>
+            </td>
+
+        </tr>
+        <tr>
+            <th>Sözlü</th>
+            <td>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control input" id="mSozlu" placeholder="Sözlü">
+                    <label for="mSozlu">Sözlü</label>
+                </div>
+            </td>
+            <td>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control input" id="tSozlu" placeholder="Sözlü">
+                    <label for="tSozlu">Sözlü</label>
+                </div>
+            </td>
+            <td>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control input" id="taSozlu" placeholder="Sözlü">
+                    <label for="taSozlu">Sözlü</label>
+                </div>
+            </td>
+            <td>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control input" id="eSozlu" placeholder="Sözlü">
+                    <label for="eSozlu">Sözlü</label>
+                </div>
+            </td>
+            <td>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control input" id="dSozlu" placeholder="Sözlü">
+                    <label for="dSozlu">Sözlü</label>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th></th>
+            <td>        
+                <button class="btn btn-md btn-outline-danger" onclick="mhesapla()">Hesapla</button>
+            </td>
+            <td>        
+                <button class="btn btn-md btn-outline-danger" onclick="thesapla()">Hesapla</button>
+            </td>
+            <td>        
+                <button class="btn btn-md btn-outline-danger" onclick="tahesapla()">Hesapla</button>
+            </td>
+            <td>        
+                <button class="btn btn-md btn-outline-danger" onclick="ehesapla()">Hesapla</button>
+            </td>
+            <td>        
+                <button class="btn btn-md btn-outline-danger" onclick="dhesapla()">Hesapla</button>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            <th></th>
+            <td>
+                <div id="msonuc"></div>
+            </td>
+            <td>
+                <div id="tsonuc"></div>
+            </td>
+            <td>
+                <div id="tasonuc"></div>
+            </td>
+            <td>
+                <div id="esonuc"></div>
+            </td>
+            <td>
+                <div id="dsonuc"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <th></th>
+            <td>        
+                <button class="btn btn-md btn-outline-danger" onclick="toplamsonuc()">TOPLAM</button>
+            </td>
+            <td>        
+               <div class="toplamhesapla"></div>
+            </td>
+            <td>
+                <div id="deger"></div>
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>
