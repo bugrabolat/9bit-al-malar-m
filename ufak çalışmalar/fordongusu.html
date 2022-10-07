@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var i, j;
+      var satir;
+      var sutun;
+      satir = prompt("tablonun satır sayısını giriniz");
+      sutun = prompt("tablonun sutun sayısını giriniz");
+      document.write("<table border = '1'>");
+      for (i = 1; i <= satir; i++) {
+        document.write("<tr>");
+        for (j = 1; j <= sutun; j++) {
+          document.write("<td>1</td>");
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+    </script>
+  </body>
+</html>

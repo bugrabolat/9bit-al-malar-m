@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dönem Notu hesaplama</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="section-1 row align-items-start">
+      <div class="col">
+        <h5>Dersler</h5>
+      </div>
+      <div class="col">
+        <h5>1.Sınav</h5>
+      </div>
+      <div class="col">
+        <h5>2.Sınav</h5>
+      </div>
+      <div class="col">
+        <h5>Sözlü Notu</h5>
+      </div>
+      <div class="col">
+        <h5>Performans</h5>
+      </div>
+      <div class="col">
+        <h5>Ortalama</h5>
+      </div>
+      <hr>
+      <div class="section-2 mt-3 row">
+        <div class="col">
+          <p>Matematik</p>
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" onkeyup="inputNumberOnBlur1()"
+            id="firstsinav1">
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" onkeyup="inputNumberOnBlur1()"
+            id="secondsinav1">
+        </div>
+        <div class="col">
+          <input type="range" min="0" max="100" onchange="inputRangeValue(this,'a'),inputNumberOnBlur1()"
+            id="sozlu1">
+          <p id="rangetext1"></p>
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" disabled id="checkboxinput1"
+            onchange="inputNumberOnBlur1()">
+          <input type="checkbox" onclick="inputCheckboxOnClick1(this)">
+        </div>
+        <div class="col">
+          <p id="ortalama-text1"></p>
+        </div>
+      </div>
+      <hr>
+      <div class="section-3 mt-3 row">
+        <div class="col">
+          <p>Edebiyat</p>
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" onkeyup="inputNumberOnBlur2()"
+            id="firstsinav2">
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" onkeyup="inputNumberOnBlur2()"
+            id="secondsinav2">
+        </div>
+        <div class="col">
+          <input type="range" min="0" max="100" onchange="inputRangeValue(this,'b'),inputNumberOnBlur2()"
+            id="sozlu2">
+          <p id="rangetext2"></p>
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" disabled id="checkboxinput2"
+            onchange="inputNumberOnBlur2()">
+          <input type="checkbox" onclick="inputCheckboxOnClick2(this)">
+        </div>
+        <div class="col">
+          <p id="ortalama-text2"></p>
+        </div>
+      </div>
+      <hr>
+      <div class="section-4 mt-3 row">
+        <div class="col">
+          <p>Coğrafya</p>
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" onkeyup="inputNumberOnBlur3()"
+            id="firstsinav3">
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" onkeyup="inputNumberOnBlur3()"
+            id="secondsinav3">
+        </div>
+        <div class="col">
+          <input type="range" min="0" max="100" onchange="inputRangeValue(this,'c'),inputNumberOnBlur3()"
+            id="sozlu3">
+          <p id="rangetext3"></p>
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" disabled id="checkboxinput3"
+            onchange="inputNumberOnBlur3()">
+          <input type="checkbox" onclick="inputCheckboxOnClick3(this)">
+        </div>
+        <div class="col">
+          <p id="ortalama-text3"></p>
+        </div>
+      </div>
+      <hr>
+      <div class="section-5 mt-3 row">
+        <div class="col">
+          <p>Fizik</p>
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" onkeyup="inputNumberOnBlur4()"
+            id="firstsinav4">
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" onkeyup="inputNumberOnBlur4()"
+            id="secondsinav4">
+        </div>
+        <div class="col">
+          <input type="range" min="0" max="100" onchange="inputRangeValue(this,'d'),inputNumberOnBlur4()" 
+            id="sozlu4">
+          <p id="rangetext4"></p>
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" disabled id="checkboxinput4"
+            onchange="inputNumberOnBlur4()">
+          <input type="checkbox" onclick="inputCheckboxOnClick4(this)">
+        </div>
+        <div class="col">
+          <p id="ortalama-text4"></p>
+        </div>
+      </div>
+      <hr>
+      <div class="section-6 mt-3 row">
+        <div class="col">
+          <p>Kimya</p>
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" onkeyup="inputNumberOnBlur5()"
+            id="firstsinav5">
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" onkeyup="inputNumberOnBlur5()"
+            id="secondsinav5">
+        </div>
+        <div class="col">
+          <input type="range" min="0" max="100" onchange="inputRangeValue(this,'e'),inputNumberOnBlur5()"
+            id="sozlu5">
+          <p id="rangetext5"></p>
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" disabled id="checkboxinput5"
+            onchange="inputNumberOnBlur5()">
+          <input type="checkbox" onclick="inputCheckboxOnClick5(this)">
+        </div>
+        <div class="col">
+          <p id="ortalama-text5"></p>
+        </div>
+      </div>
+      <hr>
+      <div class="section-7 mt-3 row">
+        <div class="col">
+          <p>Biyoloji</p>
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" onkeyup="inputNumberOnBlur6()"
+            id="firstsinav6">
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" onkeyup="inputNumberOnBlur6()"
+            id="secondsinav6">
+        </div>
+        <div class="col">
+          <input type="range" min="0" max="100" onchange="inputRangeValue(this,'f'),inputNumberOnBlur6()"
+            id="sozlu6">
+          <p id="rangetext6"></p>
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" disabled id="checkboxinput6"
+            onchange="inputNumberOnBlur6()">
+          <input type="checkbox" onclick="inputCheckboxOnClick6(this)">
+        </div>
+        <div class="col">
+          <p id="ortalama-text6"></p>
+        </div>
+      </div>
+      <hr>
+      <div class="section-8 mt-3 row">
+        <div class="col">
+          <p>Tarih</p>
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" onkeyup="inputNumberOnBlur7()"
+            id="firstsinav7">
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" onkeyup="inputNumberOnBlur7()"
+            id="secondsinav7">
+        </div>
+        <div class="col">
+          <input type="range" min="0" max="100" onchange="inputRangeValue(this,'g'),inputNumberOnBlur7()" 
+            id="sozlu7">
+          <p id="rangetext7"></p>
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" disabled id="checkboxinput7"
+            onchange="inputNumberOnBlur7()">
+          <input type="checkbox" onclick="inputCheckboxOnClick7(this)">
+        </div>
+        <div class="col">
+          <p id="ortalama-text7"></p>
+        </div>
+      </div>
+      <hr>
+      <div class="section-9 mt-3 row">
+        <div class="col">
+          <p>Felsefe</p>
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" onkeyup="inputNumberOnBlur8()"
+            id="firstsinav8">
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" onkeyup="inputNumberOnBlur8()"
+            id="secondsinav8">
+        </div>
+        <div class="col">
+          <input type="range" min="0" max="100" onchange="inputRangeValue(this,'i'),inputNumberOnBlur8()"
+            id="sozlu8">
+          <p id="rangetext8"></p>
+        </div>
+        <div class="col">
+          <input type="number" style="width: 100px;" max="100" min="0" step="0.5" disabled id="checkboxinput8"
+            onchange="inputNumberOnBlur8()">
+          <input type="checkbox" onclick="inputCheckboxOnClick8(this)">
+        </div>
+        <div class="col">
+          <p id="ortalama-text8"></p>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button type="button" class="btn btn-outline-warning" onclick="buttonOnClick()">Hesapla</button>
+    </div>
+  </div>
+  </div>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+
+    function inputCheckboxOnClick1(element) {
+
+      var checkboxinpu1 = document.getElementById("checkboxinput1");
+      if (element.checked) {
+        document.getElementById("checkboxinput1").disabled = false;
+      } else {
+        document.getElementById("checkboxinput1").disabled = true;
+      }
+    }
+    function inputCheckboxOnClick2(element) {
+
+      var checkboxinpu1 = document.getElementById("checkboxinput2");
+      if (element.checked) {
+        document.getElementById("checkboxinput2").disabled = false;
+      } else {
+        document.getElementById("checkboxinput2").disabled = true;
+      }
+    }
+    function inputCheckboxOnClick3(element) {
+
+      var checkboxinpu1 = document.getElementById("checkboxinput3");
+      if (element.checked) {
+        document.getElementById("checkboxinput3").disabled = false;
+      } else {
+        document.getElementById("checkboxinput3").disabled = true;
+      }
+    }
+    function inputCheckboxOnClick4(element) {
+
+      var checkboxinpu1 = document.getElementById("checkboxinput4");
+      if (element.checked) {
+        document.getElementById("checkboxinput4").disabled = false;
+      } else {
+        document.getElementById("checkboxinput4").disabled = true;
+      }
+    }
+    function inputCheckboxOnClick5(element) {
+
+      var checkboxinpu1 = document.getElementById("checkboxinput5");
+      if (element.checked) {
+        document.getElementById("checkboxinput5").disabled = false;
+      } else {
+        document.getElementById("checkboxinput5").disabled = true;
+      }
+    }
+    function inputCheckboxOnClick6(element) {
+
+      var checkboxinpu1 = document.getElementById("checkboxinput6");
+      if (element.checked) {
+        document.getElementById("checkboxinput6").disabled = false;
+      } else {
+        document.getElementById("checkboxinput6").disabled = true;
+      }
+    }
+    function inputCheckboxOnClick7(element) {
+
+      var checkboxinpu1 = document.getElementById("checkboxinput7");
+      if (element.checked) {
+        document.getElementById("checkboxinput7").disabled = false;
+      } else {
+        document.getElementById("checkboxinput7").disabled = true;
+      }
+    }
+    function inputCheckboxOnClick8(element) {
+
+      var checkboxinpu1 = document.getElementById("checkboxinput8");
+      if (element.checked) {
+        document.getElementById("checkboxinput8").disabled = false;
+      } else {
+        document.getElementById("checkboxinput8").disabled = true;
+      }
+    }
+
+
+
+    function inputNumberOnBlur1() {
+      if (document.getElementById("checkboxinput1").disabled == true) {
+        var rangesozlu1 = document.getElementById("sozlu1").value / 3
+        var firstsinav1 = document.getElementById("firstsinav1").value / 3;
+        var secondsinav1 = document.getElementById("secondsinav1").value / 3;
+        var ortalamatext1 = document.getElementById("ortalama-text1");
+        var performans1 = document.getElementById("checkboxinput1").value / 3;
+        var ortalama1 = firstsinav1 + secondsinav1 + rangesozlu1;
+        ortalamatext1.innerHTML = ortalama1;
+      } else {
+        var rangesozlu1 = document.getElementById("sozlu1").value / 4
+        var firstsinav1 = document.getElementById("firstsinav1").value / 4;
+        var secondsinav1 = document.getElementById("secondsinav1").value / 4;
+        var ortalamatext1 = document.getElementById("ortalama-text1");
+        var performans1 = document.getElementById("checkboxinput1").value / 4;
+        var ortalama1 = firstsinav1 + secondsinav1 + rangesozlu1 + performans1;
+        ortalamatext1.innerHTML = ortalama1;
+      }
+
+
+    }
+    function inputNumberOnBlur2() {
+      if (document.getElementById("checkboxinput2").disabled == true) {
+        var rangesozlu2 = document.getElementById("sozlu2").value / 3
+        var firstsinav2 = document.getElementById("firstsinav2").value / 3;
+        var secondsinav2 = document.getElementById("secondsinav2").value / 3;
+        var ortalamatext2 = document.getElementById("ortalama-text2");
+        var performans2 = document.getElementById("checkboxinput2").value / 3;
+        var ortalama2 = firstsinav2 + secondsinav2 + rangesozlu2;
+        ortalamatext2.innerHTML = ortalama2;
+      } else {
+        var rangesozlu2 = document.getElementById("sozlu2").value / 4
+        var firstsinav2 = document.getElementById("firstsinav2").value / 4;
+        var secondsinav2 = document.getElementById("secondsinav2").value / 4;
+        var ortalamatext2 = document.getElementById("ortalama-text2");
+        var performans2 = document.getElementById("checkboxinput2").value / 4;
+        var ortalama2 = firstsinav2 + secondsinav2 + rangesozlu2 + performans2;
+        ortalamatext2.innerHTML = ortalama2;
+      }
+    }
+    function inputNumberOnBlur3() {
+      if (document.getElementById("checkboxinput3").disabled == true) {
+        var rangesozlu3 = document.getElementById("sozlu3").value / 3
+        var firstsinav3 = document.getElementById("firstsinav3").value / 3;
+        var secondsinav3 = document.getElementById("secondsinav3").value / 3;
+        var ortalamatext3 = document.getElementById("ortalama-text3");
+        var performans3 = document.getElementById("checkboxinput3").value / 3;
+        var ortalama3 = firstsinav3 + secondsinav3 + rangesozlu3;
+        ortalamatext3.innerHTML = ortalama3;
+      } else {
+        var rangesozlu3 = document.getElementById("sozlu3").value / 4
+        var firstsinav3 = document.getElementById("firstsinav3").value / 4;
+        var secondsinav3 = document.getElementById("secondsinav3").value / 4;
+        var ortalamatext3 = document.getElementById("ortalama-text3");
+        var performans3 = document.getElementById("checkboxinput3").value / 4;
+        var ortalama3 = firstsinav3 + secondsinav3 + rangesozlu3 + performans3;
+        ortalamatext3.innerHTML = ortalama3;
+      }
+
+    }
+    function inputNumberOnBlur4() {
+      if (document.getElementById("checkboxinput4").disabled == true) {
+        var rangesozlu4 = document.getElementById("sozlu4").value / 3
+        var firstsinav4 = document.getElementById("firstsinav4").value / 3;
+        var secondsinav4 = document.getElementById("secondsinav4").value / 3;
+        var ortalamatext4 = document.getElementById("ortalama-text4");
+        var performans4 = document.getElementById("checkboxinput4").value / 3;
+        var ortalama4 = firstsinav4 + secondsinav4 + rangesozlu4;
+        ortalamatext4.innerHTML = ortalama4;
+      } else {
+        var rangesozlu4 = document.getElementById("sozlu4").value / 4
+        var firstsinav4 = document.getElementById("firstsinav4").value / 4;
+        var secondsinav4 = document.getElementById("secondsinav4").value / 4;
+        var ortalamatext4 = document.getElementById("ortalama-text4");
+        var performans4 = document.getElementById("checkboxinput4").value / 4;
+        var ortalama4 = firstsinav4 + secondsinav4 + rangesozlu4 + performans4;
+        ortalamatext4.innerHTML = ortalama4;
+      }
+
+    }
+    function inputNumberOnBlur5() {
+      if (document.getElementById("checkboxinput5").disabled == true) {
+        var rangesozlu5 = document.getElementById("sozlu5").value / 3
+        var firstsinav5 = document.getElementById("firstsinav5").value / 3;
+        var secondsinav5 = document.getElementById("secondsinav5").value / 3;
+        var ortalamatext5 = document.getElementById("ortalama-text5");
+        var performans5 = document.getElementById("checkboxinput5").value / 3;
+        var ortalama5 = firstsinav5 + secondsinav5 + rangesozlu5;
+        ortalamatext5.innerHTML = ortalama5;
+      } else {
+        var rangesozlu5 = document.getElementById("sozlu5").value / 4
+        var firstsinav5 = document.getElementById("firstsinav5").value / 4;
+        var secondsinav5 = document.getElementById("secondsinav5").value / 4;
+        var ortalamatext5 = document.getElementById("ortalama-text5");
+        var performans5 = document.getElementById("checkboxinput5").value / 4;
+        var ortalama5 = firstsinav5 + secondsinav5 + rangesozlu5 + performans5;
+        ortalamatext5.innerHTML = ortalama5;
+      }
+    }
+    function inputNumberOnBlur6() {
+      if (document.getElementById("checkboxinput6").disabled == true) {
+        var rangesozlu6 = document.getElementById("sozlu6").value / 3
+        var firstsinav6 = document.getElementById("firstsinav6").value / 3;
+        var secondsinav6 = document.getElementById("secondsinav6").value / 3;
+        var ortalamatext6 = document.getElementById("ortalama-text6");
+        var performans6 = document.getElementById("checkboxinput6").value / 3;
+        var ortalama6 = firstsinav6 + secondsinav6 + rangesozlu6;
+        ortalamatext6.innerHTML = ortalama6;
+      } else {
+        var rangesozlu6 = document.getElementById("sozlu6").value / 4
+        var firstsinav6 = document.getElementById("firstsinav6").value / 4;
+        var secondsinav6 = document.getElementById("secondsinav6").value / 4;
+        var ortalamatext6 = document.getElementById("ortalama-text6");
+        var performans6 = document.getElementById("checkboxinput6").value / 4;
+        var ortalama6 = firstsinav6 + secondsinav6 + rangesozlu6 + performans6;
+        ortalamatext6.innerHTML = ortalama6;
+      }
+    }
+    function inputNumberOnBlur7() {
+      if (document.getElementById("checkboxinput7").disabled == true) {
+        var rangesozlu7 = document.getElementById("sozlu7").value / 3
+        var firstsinav7 = document.getElementById("firstsinav7").value / 3;
+        var secondsinav7 = document.getElementById("secondsinav7").value / 3;
+        var ortalamatext7 = document.getElementById("ortalama-text7");
+        var performans7 = document.getElementById("checkboxinput7").value / 3;
+        var ortalama7 = firstsinav7 + secondsinav7 + rangesozlu7;
+        ortalamatext7.innerHTML = ortalama7;
+      } else {
+        var rangesozlu7 = document.getElementById("sozlu7").value / 4;
+        var firstsinav7 = document.getElementById("firstsinav7").value / 4;
+        var secondsinav7 = document.getElementById("secondsinav7").value / 4;
+        var ortalamatext7 = document.getElementById("ortalama-text7");
+        var performans7 = document.getElementById("checkboxinput7").value / 4;
+        var ortalama7 = firstsinav7 + secondsinav7 + rangesozlu7 + performans7;
+        ortalamatext7.innerHTML = ortalama7;
+      }
+
+    }
+    function inputNumberOnBlur8() {
+      if (document.getElementById("checkboxinput8").disabled == true) {
+        var rangesozlu8 = document.getElementById("sozlu8").value / 3
+        var firstsinav8 = document.getElementById("firstsinav8").value / 3;
+        var secondsinav8 = document.getElementById("secondsinav8").value / 3;
+        var ortalamatext8 = document.getElementById("ortalama-text8");
+        var performans8 = document.getElementById("checkboxinput8").value / 3;
+        var ortalama8 = firstsinav8 + secondsinav8 + rangesozlu8;
+        ortalamatext8.innerHTML = ortalama8;
+      } else {
+        var rangesozlu8 = document.getElementById("sozlu8").value / 4
+        var firstsinav8 = document.getElementById("firstsinav8").value / 4;
+        var secondsinav8 = document.getElementById("secondsinav8").value / 4;
+        var ortalamatext8 = document.getElementById("ortalama-text8");
+        var performans8 = document.getElementById("checkboxinput8").value / 4;
+        var ortalama8 = firstsinav8 + secondsinav8 + rangesozlu8 + performans8;
+        ortalamatext8.innerHTML = ortalama8;
+      }
+
+    }
+
+    function inputRangeValue(element, x) {
+      var rangetext1 = document.getElementById("rangetext1");
+      var rangetext2 = document.getElementById("rangetext2");
+      var rangetext3 = document.getElementById("rangetext3");
+      var rangetext4 = document.getElementById("rangetext4");
+      var rangetext5 = document.getElementById("rangetext5");
+      var rangetext6 = document.getElementById("rangetext6");
+      var rangetext7 = document.getElementById("rangetext7");
+      var rangetext8 = document.getElementById("rangetext8");
+
+      switch (x) {
+        case "a":
+          rangetext1.innerHTML = element.value;
+          break; case "b":
+          rangetext2.innerHTML = element.value;
+          break; case "c":
+          rangetext3.innerHTML = element.value;
+          break; case "d":
+          rangetext4.innerHTML = element.value;
+          break; case "e":
+          rangetext5.innerHTML = element.value;
+          break; case "f":
+          rangetext6.innerHTML = element.value;
+          break; case "g":
+          rangetext7.innerHTML = element.value;
+          break; case "i":
+          rangetext8.innerHTML = element.value;
+          break;
+
+      }
+
+    }
+
+    function buttonOnClick() {
+      var ortalama1 = document.getElementById("ortalama-text1").innerText / 8;
+      var ortalama2 = document.getElementById("ortalama-text2").innerText / 8;
+      var ortalama3 = document.getElementById("ortalama-text3").innerText / 8;
+      var ortalama4 = document.getElementById("ortalama-text4").innerText / 8;
+      var ortalama5 = document.getElementById("ortalama-text5").innerText / 8;
+      var ortalama6 = document.getElementById("ortalama-text6").innerText / 8;
+      var ortalama7 = document.getElementById("ortalama-text7").innerText / 8;
+      var ortalama8 = document.getElementById("ortalama-text8").innerText / 8;
+      var donemort = ortalama1 + ortalama2 + ortalama3 + ortalama4 + ortalama5 + ortalama6 + ortalama7 + ortalama8;
+      swal('dönem notunuz :' + donemort);
+    }
+  </script>
+</body>
+
+</html>

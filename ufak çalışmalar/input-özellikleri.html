@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>İnput özellikleri</title>
+  </head>
+
+  <body>
+    Örnekler Input type: button Örnek
+
+    <input
+      type="button"
+      value="Buton"
+      disabled
+      onmousemove="inputButtonOnMouseMove()"
+      onmouseout="inputButtonOnMouseOut()"
+      onmouseover="inputButtonOnMouseOver()"
+      onmouseup="inputButtonOnMouseUp()"
+    />
+    <br />
+    <br />
+    <br />
+
+    Input type: checkbox Örnek
+
+    <input
+      type="checkbox"
+      name="araclar"
+      onclick="checkbox()"
+      id="chbox1"
+      onmousemove="inputCheckboxOnMouseMove()"
+      onmouseout="inputCheckboxOnMouseOut()"
+      onmouseover="inputCheckboxOnMouseOver()"
+      onmouseup="inputCheckboxOnMouseUp()"
+    />
+    Bisiklet
+    <input
+      type="checkbox"
+      name="araclar"
+      id="chbox2"
+      onclick="checkbox()"
+      onmousemove="inputCheckboxOnMouseMove()"
+      onmouseout="inputCheckboxOnMouseOut()"
+      onmouseover="inputCheckboxOnMouseOver()"
+      onmouseup="inputCheckboxOnMouseUp()"
+    />
+    Araba
+    <p id="chboxtext"></p>
+    <br />
+    <br />
+    <br />
+
+    Input type: color Örnek Sevdiğiniz rengi seçin:
+    <input
+      type="color"
+      name="renkler"
+      accesskey="x"
+      id="color"
+      onmousemove="inputColorOnMouseMove()"
+      onmouseout="inputColorOnMouseOut()"
+      onmouseover="inputColorOnMouseOver()"
+      onmouseup="inputColorOnMouseUp()"
+      onchange="inputColorOnChange()"
+    />
+    <p id="colorp"></p>
+    <br /><br /><br />
+
+    Input type: date Örnek Doğum tarihiniz: <input type="date" name="dgunu" />
+    <br /><br /><br />
+
+    Input type: datetime Örnek Tarih seçin(tarih ve zaman):
+    <input type="datetime" name="dgunudt" /> <br /><br /><br />
+
+    Input type: datetime-local Örnek Tarih seçin(tarih ve zaman):
+    <input type="datetime-local" name="dgunudtl" /> <br /><br /><br />
+
+    Input type: email Örnek E-posta:
+    <input
+      type="email"
+      name="eposta"
+      autocomplete="on"
+      onblur="inputMailOnBlur()"
+      onchange="inputMailOnChange()"
+      onkeydown="inputMailOnKeyDown()"
+      onkeypress="inputMailOnKeyPress()"
+      onkeyup="inputMailOnKeyUp()"
+      onmousemove="inputMailOnMouseMove()"
+      onmouseout="inputMailOnMouseOut()"
+      onmouseover="inputMailOnMouseOver()"
+      onmouseup="inputMailOnMouseUp()"
+      id="mail"
+    />
+    <p id="mailp" onclick="inputMailOnClick()"></p>
+    <p id="mailp2"></p>
+    <p id="mailp3"></p>
+    <p id="mailp4"></p>
+    <br /><br /><br />
+
+    Input type: file Örnek Bir dosya seçin:
+    <input type="file" name="resim" accept="image/*" /> <br /><br /><br />
+
+    Input type: hidden Örnek
+
+    <input type="hidden" name="ulke" value="Türkiye" />
+    <br /><br /><br />
+
+    Input type: image Örnek
+
+    <input type="image" src="gonder.png" alt="Gönder" width="30" height="30" />
+    <br /><br /><br />
+
+    Input type: month Örnek Doğumgünün(ay ve yıl):
+    <input
+      type="month"
+      name="dgunuay"
+      id="month"
+      onblur="inputMonthOnBlur()"
+      onmousemove="inputMonthOnMouseMove()"
+    />
+    <p id="monthp"></p>
+    <p id="monthp2"></p>
+
+    <br /><br /><br />
+
+    Input type: number Örnek Seçim(1 ile 5 arası):
+    <input
+      type="number"
+      name="secim"
+      min="1"
+      max="200"
+      id="sayi"
+      onmousedown="sayisay()"
+      onfocus="sayisay()"
+      onmousemove="inputNumberOnMouseMove()"
+      onmouseout="inputNumberOnMouseOut()"
+      onmouseover="inputNumberOnMouseOver()"
+      onmouseup="inputNumberOnMouseUp()"
+    />
+    <br /><br /><br />
+    <p id="sayac"></p>
+
+    Input type: password Örnek
+
+    <input
+      type="password"
+      name="sifre"
+      id="password"
+      onchange="inputPasswordOnChange()"
+      onmousemove="inputPasswordOnMouseMove()"
+      onmouseout="inputPasswordOnMouseOut()"
+      onmouseover="inputPasswordOnMouseOver()"
+      onmouseup="inputPasswordOnMouseUp()"
+    />
+    <p id="passwordtext"></p>
+    <br /><br /><br />
+
+    Input type: radio Örnek
+
+    <input
+      type="radio"
+      name="cinsiyet"
+      value="bay"
+      onclick="radio(value)"
+      onchange="inputRadioOnChange()"
+      onmousemove="inputRadioOnMouseMove()"
+      onmouseout="inputRadioOnMouseOut()"
+      onmouseover="inputRadioOnMouseOver()"
+      onmouseup="inputRadioOnMouseUp()"
+      id="radio1"
+    />
+    Bay
+
+    <input
+      type="radio"
+      name="cinsiyet"
+      value="bayan"
+      onclick="radio(value)"
+      onchange="inputRadioOnChange()"
+      onmousemove="inputRadioOnMouseMove()"
+      onmouseout="inputRadioOnMouseOut()"
+      onmouseover="inputRadioOnMouseOver()"
+      onmouseup="inputRadioOnMouseUp()"
+      id="radio2"
+    />
+    Bayan
+    <br />
+    <p id="radiotext"></p>
+    <p id="radiotext2"></p>
+    <br /><br /><br />
+
+    Input type: range Örnek
+
+    <input
+      type="range"
+      id="range"
+      name="secim"
+      min="1"
+      max="20"
+      onmouseup="mouseup()"
+      onmousemove="drag()"
+      onmouseout="inputRangeOnMouseOut()"
+      onmouseover="inputRangeOnMouseOver()"
+    />
+
+    <br />
+    <p id="rangep"></p>
+    <p id="rangep2"></p>
+    <br /><br /><br />
+
+    Input type: reset Örnek
+
+    <input
+      type="reset"
+      ondblclick="inputResetOnDblClick()"
+      onmousemove="inputResetOnMouseMove()"
+      onmouseout="inputResetOnMouseOut()"
+      onmouseover="inputResetOnMouseOver()"
+      onmouseup="inputResetOnMouseUp()"
+    />
+    <p id="resetp"></p>
+    <br /><br /><br />
+
+    Input type: search Örnek
+
+    <input
+      type="search"
+      name="googlearama"
+      autocomplete="name"
+      onselect="search()"
+      onblur="search()"
+      onmousemove="onMouseMove(this, 'b')"
+      onmouseout="inputSearchOnMouseOut()"
+      onmouseover="inputSearchOnMouseOver()"
+      onmouseup="inputSearchOnMouseUp()"
+      id="search"
+    />
+    <p id="searchtext"></p>
+    <p id="searchtext2"></p>
+    <br /><br /><br />
+
+    Input type: submit Örnek
+
+    <input
+      type="submit"
+      onclick="inputSubmitOnClick()"
+      onmousemove="onMouseMove(this, 'b')"
+      onmouseout="inputSubmitOnMouseOut()"
+      onmouseover="inputSubmitOnMouseOver()"
+      onmouseup="inputSubmitOnMouseUp()"
+      value="Gönder"
+    />
+    <p id="submitp"></p>
+    <br /><br /><br />
+
+    Input type: tel Örnek Telefon Numaranız:
+    <input
+      type="tel"
+      name="telno"
+      size="10"
+      maxlength="10"
+      onmousewheel="tel()"
+      onmousemove="inputTelOnMouseMove()"
+      onmouseout="inputTelOnMouseOut()"
+      onmouseover="inputTelOnMouseOver()"
+      onmouseup="inputTelOnMouseUp()"
+      id="tel"
+    />
+    <p id="telp"></p>
+    <br /><br /><br />
+
+    Input type: text Örnek İsminiz:
+    <input type="text" name="fisim" autocomplete="on" dir="rtl" />
+
+    Soyisminiz: <input type="text" name="fsisim" value="can" readonly />
+    <br /><br /><br />
+
+    Input type: time Örnek Zaman Seçin:
+    <input
+      type="time"
+      name="zaman"
+      id="time"
+      onmousemove="inputTimeOnMouseMove()"
+      onmouseout="inputTimeOnMouseOut()"
+      onmouseover="inputTimeOnMouseOver()"
+      onmouseup="inputTimeOnMouseUp()"
+      onchange="inputTimeOnChange()"
+    />
+    <p id="timep"></p>
+    <br /><br /><br />
+
+    Input type: url Örnek Favori sayfanızı ekleyin:
+    <input
+      type="url"
+      name="favori"
+      id="url"
+      autofocus
+      onmousemove="inputUrlOnMouseMove()"
+      onmouseout="inputUrlOnMouseOut()"
+      onmouseover="inputUrlOnMouseOver()"
+      onmouseup="inputUrlOnMouseUp()"
+      onchange="inputUrlOnChange()"
+    />
+    <p id="urlp"></p>
+
+    <br /><br /><br />
+
+    Input type: week Örnek Hafta Seçin: <input type="week" name="hafta" />
+
+    <button
+      id="denemebutton"
+      onclick="inputButtonOnClick()"
+      onmousedown="inputButtonOnMouseDown()"
+    >buttton1</button>
+
+    <script>
+      /* mail bolumu */
+      function inputMailOnBlur() {
+        var mail = document.getElementById("mail");
+        var mailp = document.getElementById("mailp");
+        mailp.innerHTML = "onblur çalıştı :" + " " + mail.value;
+      }
+      function inputMailOnChange() {
+        var mail = document.getElementById("mail");
+        console.log("onChange çalıştı");
+      }
+      function inputMailOnClick() {
+        var mailp = document.getElementById("mailp");
+        alert("onClick çalıştı");
+      }
+      function inputMailOnKeyDown() {
+        var mail = document.getElementById("mail");
+        var mailp2 = document.getElementById("mailp2");
+        mailp2.innerHTML = "onkeydown çalıştı :" + mail.value;
+      }
+      function inputMailOnKeyPress() {
+        var mail = document.getElementById("mail");
+        var mailp3 = document.getElementById("mailp3");
+        mailp3.innerHTML = "onkeypress çalıştı :" + mail.value;
+      }
+      function inputMailOnKeyUp() {
+        var mail = document.getElementById("mail");
+        var mailp4 = document.getElementById("mailp4");
+        mailp4.innerHTML = "onkeyup çalıştı :" + mail.value;
+      }
+      function inputMailOnMouseMove() {
+        console.log("mousemove çalıştı");
+      }
+      function inputMailOnMouseOut() {
+        console.log("mouseOut çalıştı");
+      }
+      function inputMailOnMouseOver() {
+        console.log("mouseOver çalıştı");
+      }
+      function inputMailOnMouseUp() {
+        console.log("mouseUp çalıştı");
+      }
+
+      function inputRangeOnMouseOut() {
+        var range = document.getElementById("range").value;
+        var rangep = (document.getElementById("rangep").style.display = "none");
+      }
+
+      function inputRangeOnMouseOver() {
+        console.log("mouseOver çalıştı");
+      }
+
+      function inputButtonOnClick() {
+        var button = document.getElementById("denemebutton");
+        alert("butona bastınız");
+      }
+      function inputButtonOnMouseDown() {
+        var button = document.getElementById("denemebutton");
+        console.log("butona basılı tutuluyor.");
+      }
+
+      /* password bolumu */
+
+      function inputPasswordOnMouseMove() {
+        console.log("mousemove çalıştı");
+      }
+      function inputPasswordOnMouseOut() {
+        console.log("mouseOut çalıştı");
+      }
+      function inputPasswordOnMouseOver() {
+        console.log("mouseOver çalıştı");
+      }
+      function inputPasswordOnMouseUp() {
+        console.log("mouseUp çalıştı");
+      }
+
+      function inputPasswordOnChange() {
+        var password = document.getElementById("password").value;
+        var passwordtext = (document.getElementById("passwordtext").innerHTML =
+          "oninput eventi :" + password);
+      }
+      // checkbox bolumu
+      function checkbox() {
+        var checkbox1 = document.getElementById("chbox1");
+        var checkbox2 = document.getElementById("chbox2");
+        var chboxtext = document.getElementById("chboxtext");
+        if (checkbox1.checked && checkbox2.checked) {
+          chboxtext.innerHTML = checkbox1.checked + checkbox2.checked;
+        } else {
+          chboxtext.innerHTML = checkbox1.checked + checkbox2.checked;
+        }
+      }
+      function inputCheckboxOnMouseMove() {
+        console.log("mousemove çalıştı");
+      }
+      function inputCheckboxOnMouseOut() {
+        console.log("mouseOut çalıştı");
+      }
+      function inputCheckboxOnMouseOver() {
+        console.log("mouseOver çalıştı");
+      }
+      function inputCheckboxOnMouseUp() {
+        console.log("mouseUp çalıştı");
+      }
+
+      // range bolumu
+
+      function drag() {
+        var range = document.getElementById("range").value;
+        var rangep = (document.getElementById("rangep").innerHTML =
+          "onmousemove :" + range);
+      }
+      function mouseup() {
+        var rangep2 = (document.getElementById("rangep2").innerHTML =
+          "mouseup çalıştı");
+      }
+      /* radio bolumu */
+      function radio(value) {
+        var radiotext = document.getElementById("radiotext");
+        var radio1 = document.getElementById("radio1").value;
+        var radio2 = document.getElementById("radio2").value;
+        if (value == "bay") {
+          radiotext.innerHTML = radio1;
+        } else if (value == "bayan") {
+          radiotext.innerHTML = radio2;
+        }
+      }
+
+      function onMouseMove(erebn, a) {
+        switch (a) {
+          case 'a':
+            console.log(erebn.innerText + " Elemanının üzerinde mouse move çalışıyor");
+            break;
+          case 'b':
+            console.log("Input elemanın üzerinde mouse move çalışıyor. Value => " + erebn.value);
+            break;
+        
+          default:
+            break;
+        }
+      }
+
+      function inputRadioOnChange() {
+        var radiotext2 = document.getElementById("radiotext2");
+        radiotext2.innerHTML = "değiştirildi";
+      }
+
+      function inputRadioOnMouseMove() {
+        console.log("mousemove çalıştı");
+      }
+
+      function inputRadioOnMouseOut() {
+        console.log("mouseout çalıştı");
+      }
+
+      function inputRadioOnMouseOver() {
+        console.log("mouseover çalıştı");
+      }
+
+      function inputRadioOnMouseUp() {
+        console.log("mouseup çalıştı");
+      }
+
+      /* search bolumu */
+      function search() {
+        // document.getElementById("search").value = "";  silme işlemi
+        var search = document.getElementById("search").value;
+        var searchtext = (document.getElementById("searchtext").innerHTML =
+          search);
+        var searchtext2 = document.getElementById("searchtext2");
+        if (isNaN(search)) {
+          searchtext2.innerHTML = "metin Girisi yaptınız";
+        } else {
+          searchtext2.innerHTML = "rakam girisi yaptınız";
+        }
+      }
+      function inputSearchOnMouseMove() {
+        console.log("mousemove çalıştı");
+      }
+      function inputSearchOnMouseOut() {
+        console.log("mouseout çalıştı");
+      }
+      function inputSearchOnMouseOver() {
+        console.log("mouseover çalıştı");
+      }
+      function inputSearchOnMouseUp() {
+        console.log("mouseup çalıştı");
+      }
+      function tel() {
+        var teli = document.getElementById("tel");
+        var telp = document.getElementById("telp");
+        telp.innerHTML = teli.value;
+      }
+      /* number bolumu */
+      function sayisay() {
+        var sayi = document.getElementById("sayi");
+        var sayac = document.getElementById("sayac");
+        sayac.innerHTML = sayi.value;
+      }
+
+      function inputNumberOnMouseMove() {
+        console.log("mousemove çalıştı");
+      }
+      function inputNumberOnMouseOut() {
+        console.log("mouseOut çalıştı");
+      }
+      function inputNumberOnMouseOver() {
+        console.log("mouseOver çalıştı");
+      }
+      function inputNumberOnMouseUp() {
+        console.log("mouseUp çalıştı");
+      }
+      /* month bolumu */
+      function inputMonthOnBlur() {
+        var month = document.getElementById("month").value;
+        var monthp = document.getElementById("monthp");
+        monthp.innerHTML = month;
+      }
+      function inputMonthOnMouseMove() {
+        var monthp2 = document.getElementById("monthp2");
+        monthp2.innerHTML = "onmouse : seçilen tarih";
+      }
+      /* color bolumu */
+      function inputColorOnMouseMove() {
+        console.log("mousemove çalıştı");
+      }
+      function inputColorOnMouseOut() {
+        console.log("mouseOut çalıştı");
+      }
+      function inputColorOnMouseOver() {
+        console.log("mouseOver çalıştı");
+      }
+      function inputColorOnMouseUp() {
+        console.log("mouseUp çalıştı");
+      }
+      function inputColorOnChange() {
+        var color = document.getElementById("color").value;
+        var colorp = document.getElementById("colorp");
+        colorp.innerHTML = color;
+      }
+      /* time bolumu */
+      function inputTimeOnMouseMove() {
+        console.log("mousemove çalıştı");
+      }
+      function inputTimeOnMouseOut() {
+        console.log("mouseOut çalıştı");
+      }
+      function inputTimeOnMouseOver() {
+        console.log("mouseOver çalıştı");
+      }
+      function inputTimeOnMouseUp() {
+        console.log("mouseUp çalıştı");
+      }
+      function inputTimeOnChange() {
+        var time = document.getElementById("time").value;
+        var timep = document.getElementById("timep");
+        timep.innerHTML = time;
+      }
+      /* url bolumu */
+      function inputUrlOnMouseMove() {
+        console.log("mousemove çalıştı");
+      }
+      function inputUrlOnMouseOut() {
+        console.log("mouseOut çalıştı");
+      }
+      function inputUrlOnMouseOver() {
+        console.log("mouseOver çalıştı");
+      }
+      function inputUrlOnMouseUp() {
+        console.log("mouseUp çalıştı");
+      }
+      function inputUrlOnChange() {
+        var url = document.getElementById("url").value;
+        var urlp = document.getElementById("urlp");
+        urlp.innerHTML = url;
+      }
+      /* reset bolumu */
+      function inputResetOnMouseMove() {
+        console.log("mousemove çalıştı");
+      }
+      function inputResetOnMouseOut() {
+        console.log("mouseOut çalıştı");
+      }
+      function inputResetOnMouseOver() {
+        console.log("mouseOver çalıştı");
+      }
+      function inputResetOnMouseUp() {
+        console.log("mouseUp çalıştı");
+      }
+      function inputResetOnDblClick() {
+        var resetp = document.getElementById("resetp");
+        resetp.innerHTML = "resetlendi";
+      }
+      /* submit bolumu */
+      function inputSubmitOnMouseMove() {
+        console.log("mousemove çalıştı");
+      }
+      function inputSubmitOnMouseOut() {
+        console.log("mouseOut çalıştı");
+      }
+      function inputSubmitOnMouseOver() {
+        console.log("mouseOver çalıştı");
+      }
+      function inputSubmitOnMouseUp() {
+        console.log("mouseUp çalıştı");
+      }
+      function inputSubmitOnClick() {
+        var submitp = document.getElementById("submitp");
+        submitp.innerHTML = "Gönderildi";
+      }
+      /* tel bolumu */
+      function inputTelOnMouseMove() {
+        console.log("mousemove çalıştı");
+      }
+      function inputTelOnMouseOut() {
+        console.log("mouseOut çalıştı");
+      }
+      function inputTelOnMouseOver() {
+        console.log("mouseOver çalıştı");
+      }
+      function inputTelOnMouseUp() {
+        console.log("mouseUp çalıştı");
+      }
+      // disable button bolumu
+      function inputButtonOnMouseMove() {
+        console.log("mousemove çalıştı");
+      }
+      function inputButtonOnMouseOut() {
+        console.log("mouseOut çalıştı");
+      }
+      function inputButtonOnMouseOver() {
+        console.log("mouseOver çalıştı");
+      }
+      function inputButtonOnMouseUp() {
+        console.log("mouseUp çalıştı");
+      }
+    </script>
+  </body>
+</html>

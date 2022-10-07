@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Metotları uygulama</title>
+  </head>
+  <body>
+    <input
+      type="number"
+      id="input-1"
+      onchange="onChangeNumber()"
+      placeholder="Number metodu"
+    />
+    <input
+      type="number"
+      id="input-2"
+      onchange="onChangeToFixed()"
+      placeholder="Tofixed metodu"
+    />
+    <input
+      type="number"
+      id="input-3"
+      onchange="onChangeParseInt()"
+      placeholder="parseInt metodu"
+    />
+    <input
+      type="number"
+      id="input-4"
+      onchange="onChangeParseFloat()"
+      placeholder="parseFloat metodu"
+    />
+    <input
+      type="number"
+      id="input-5"
+      onchange="onChangeMathRound()"
+      placeholder="Math.Round"
+    />
+
+    <div>
+      <input
+        type="number"
+        id="max-1"
+        onchange="onChangeMathMax()"
+        placeholder="Math.Max metodu"
+      />
+      <input
+        type="number"
+        id="max-2"
+        onchange="onChangeMathMax()"
+        placeholder="Math.Max metodu"
+      />
+    </div>
+    <div>
+      <input
+        type="number"
+        id="min-1"
+        onchange="onChangeMathMin()"
+        placeholder="Math.Min metodu"
+      />
+      <input
+        type="number"
+        id="min-2"
+        onchange="onChangeMathMin()"
+        placeholder="Math.Min metodu"
+      />
+    </div>
+
+    <input
+      type="number"
+      id="negatif"
+      onchange="onChangeMathAbs()"
+      placeholder="Math.abs metodu"
+    />
+
+    <button onclick="onClickButtonRandom()">Rastgele Sayı Üret</button>
+    <script>
+      function onChangeNumber() {
+        var input1 = document.getElementById("input-1").value;
+        var a = Number(input1);
+        console.log(a.toString() + 2);
+      }
+
+      function onChangeToFixed() {
+        var input2 = Number(document.getElementById("input-2").value);
+        console.log(input2.toFixed(0));
+      }
+      function onChangeParseInt() {
+        var input3 = Number(document.getElementById("input-3").value);
+        console.log(parseInt(input3));
+      }
+      function onChangeParseFloat() {
+        var input4 = Number(document.getElementById("input-4").value);
+        console.log(parseFloat(input4));
+      }
+      function onChangeMathRound() {
+        var input5 = Number(document.getElementById("input-5").value);
+        console.log(Math.round(input5));
+      }
+      function onChangeMathMax() {
+        var max1 = Number(document.getElementById("max-1").value);
+        var max2 = Number(document.getElementById("max-2").value);
+        console.log(Math.max(max1, max2));
+      }
+      function onChangeMathMin() {
+        var min1 = Number(document.getElementById("min-1").value);
+        var min2 = Number(document.getElementById("min-2").value);
+        console.log(Math.min(min1, min2));
+      }
+      function onChangeMathAbs() {
+        var n = Number(document.getElementById("negatif").value);
+        if (n < 0) {
+          console.log(Math.abs(n)); // negatifi pozitife çevirmek için
+        } else {
+          console.log(-Math.abs(n)); // positifi negatife çevirmek için
+        }
+      }
+      function onClickButtonRandom() {
+        alert(Math.floor(Math.random() * 100) + 1);
+      }
+    </script>
+  </body>
+</html>

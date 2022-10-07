@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String methodlari</title>
+  </head>
+  <body>
+    <script>
+      // concat methodu
+      //   var ad = "bugra";
+      //   var soyad = "bolat";
+      //   var adsoyad = ad.concat(" ", soyad);
+      //   console.log(adsoyad);
+      //   var a = [1, 2, 3];
+      //   var b = ["a", "b", "c"];
+      //   var ab = a.concat(b);
+      //   console.log(ab);
+
+      // ***********************************************************
+
+      //indexof ve lastindexof methodu
+      //   var kurs = "Modern Javascript Dersleri: Baştan Sona Javascript Programlama";
+      //   var result1 = kurs.indexOf("Javascript",10);
+      //   var result2 = kurs.lastIndexOf("Javascript");
+      //   console.log(result1);
+
+      // String Search methodu
+      //   var kurs =
+      //     "Modern Javascript Dersleri: Baştan Sona Javascript Programlama";
+      //   var result = kurs.search("Javascript");
+      //   console.log(result);
+
+      // İndexof lastindexof uygulama
+
+      //   function test(a) {
+      //     if (a.includes("eren")) {
+      //       if (a.indexOf("eren") == a.lastIndexOf("eren")) {
+      //         return true;
+      //       } else {
+      //         return false;
+      //       }
+      //     } else {
+      //       return false;
+      //     }
+      //   }
+
+      // Search methodu
+      // search(), indexof() metodunda olduğu gibi aramaya başlanacak olan indeks numarasını almaz.
+      //  indexof() metodu regular expression ifadelerini almaz.
+
+      //   var kurs = "Modern Javascript Dersleri: Baştan Sona Javascript Programlama";
+      //   var result1 = kurs.search("Javascript");
+      //   console.log(result1);
+
+      // touppercase ve tolowercase methodları
+
+      //   var a = "Hello World";
+      //   var b = "HELLO WORLD";
+      //   var a2 = a.toUpperCase();
+      //   var b2 = b.toLowerCase();
+      //   console.log(b2);
+
+      // trim methodu başındaki ve sonundaki boşlukları silmek için
+
+      // var a = "   Hello World    ";
+      // alert(a.trim());
+
+      // Slice methodu
+
+      // var str = "Mazda,Opel,Toyota";
+      // var result = str.slice(5,11);
+      // var result = str.slice(6);// bitiş indeksini vermezsek sona kadar alır.
+      // console.log(result);
+
+      // var tel = prompt();
+      // alert("***"+tel.slice(3,-2)+"**")
+
+      // substr methodu //ikinci parametre başlangıçtan itibaren alınacak karakter sayısını temsil eder.
+
+      // var str = "Mazda,Opel,Toyota";
+      // var result = str.substr(3,11);
+      // console.log(result);
+
+      // Substring slice ile aynı sadece negatif indeks kullanamıyoruz.
+
+      //replace methodu
+
+      // var a = "ali,ahmet,can";
+      // var result = a.replace("ali","kerim");
+      // console.log(result);
+
+      // split methodu
+
+      // var a = "ali,ahmet,can,ali,mehmet,rıza";
+      // var result = a.split(",");
+      // console.log(result);
+
+      // örnekler
+
+      var sentence =
+        " Template Literals or template strings is the ability Have multi-line strings without any funny business. ";
+      var url =
+        "http://sadikturan.com/Modern Javascipt KURSU sıfırdan ileri seviye ü ö ş ü ü";
+
+      //1
+      console.log(sentence.length);
+      //2
+      console.log(sentence.trim().split(" ").length);
+      //3
+      console.log(sentence.toLowerCase());
+      //3
+      console.log(sentence.replace("-", " "));
+      //4
+      console.log(url.slice(7));
+      //5
+      console.log(url.startsWith("http"));
+      //6
+      console.log(url.includes(".com"));
+      //7
+      console.log(
+        url
+          .toLowerCase()
+          .replace(/ /g, "-")
+          .replace(/ü/g, "u")
+          .replace(/ö/g, "o")
+          .replace(/ş/g, "s")
+      );
+    </script>
+  </body>
+</html>

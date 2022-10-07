@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+/* CSS */
+.button-49,
+.button-49:after {
+  width: 150px;
+  height: 76px;
+  line-height: 78px;
+  font-size: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  box-shadow: 6px 0px 0px #00E6F6;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-49:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  content: 'ALTERNATE TEXT';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+.button-49:hover:after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .button-49,
+  .button-49:after {
+    width: 200px;
+    height: 86px;
+    line-height: 88px;
+  }
+}
+    </style>
+</head>
+
+<body>
+    <button class="button-49" role="button">Button 49</button>
+    <script>
+        function carpma(a, b) {
+            if (a + b < 30 && a + b > 19) {
+                console.log(a * b);
+            } else {
+                console.log("10 ile 15 arası sayı giriniz lütfen");
+            }
+        }
+        function kat() {
+
+            // if(x,y > 99 && x,y < 201){
+
+            //  var katx = x / 23 
+            //  var katy = y / 23 
+            //  console.log(katx,katy)
+            // if(katx == 0)
+            //  if(katx * 23 == x && katy * 23 == y){
+            //     console.log(x+y)
+            //     console.log(katx,katy)
+            // } else{
+            //     console.log("hata");
+            // }
+            // }else{
+            //     console.log("hatalı numara")
+            // }
+        }
+        for (var i = 0; i < 200; i = i + 23) {
+            console.log(i)
+        }
+
+        function asal(f) {
+            for (var i = 1; i <= f; i++) {
+                if (f % i == 0) {
+
+                }
+            }
+        }
+
+        function asalmi(sayi) {
+            var sonuc = 0;
+            for (let i = 2; i <= sayi; i++) {
+                if (sayi % i === 0) {
+                    sonuc++;
+                }
+            }
+
+            console.log(sonuc);
+            // console.log(sonuc ? (`${sayi} Sayısı asal sayı değildir, çünkü ${sonuc} tane böleni vardır.`) : (sayi + " Sayisi Asal sayıdır"));
+        }
+        // günlük 210 ton yağ rafine etme ve işleme kapasitesine sahip bir fabrikanın 7550 tonluk üretimi karşılamak için kaç gün çalışması gerektiğini ve çalışma sonucu kaç ton yağ üreteceğini hesaplayan fonksiyon.
+
+        function uretim() {
+            var istenilen = 7560;
+            var gun = 1;
+            for (let i = 210; i <= istenilen; i = i + 210) {
+                console.log(gun++)
+                console.log(i)
+
+            }
+        }
+
+        function yatırım() {
+            var sabit = 500000;
+            var yillik = 14000;
+            var omru = 17;
+            var gelir = 1700000;
+
+
+            for (let i = 0; i <= omru; i++) {
+                var maliyet = i * yillik + sabit
+            }
+            console.log(maliyet)
+            var kar_zarar = gelir - maliyet;
+            console.log(kar_zarar)
+        }
+
+
+
+        function dogumHesapla(dogum) {
+            dogum = dogum.split(".")
+            console.log(dogum[2])
+            var bugun = "27.07.2022";
+            var gun = 27;
+            var hgun = gun - dogum[0];
+            var ay = 07;
+            var hay = ay - dogum[1];
+            var hafta = 0;
+            var yıl = 2022;
+            var hyıl = yıl - dogum[2];
+
+            for (let i = 1; i <= hyıl; i++) {
+                hay = hay + 12
+                hgun = hay * 30
+            }
+            for (let i = 1; i <= hay; i++) {
+                hgun = hgun + 30
+
+            }
+            for (let i = 0; i <= hgun; i = i + 7) {
+                hafta++
+
+            }
+            console.log("ay " + hay)
+            console.log("gün " + hgun)
+            console.log("hafta " + hafta)
+        }
+
+        function dogumHesapla2(dogum) {
+            dogum = dogum.split(".")
+            console.log(dogum[2])
+            var bugun = new Date();
+            var gun = bugun.getDate();
+            var hgun = gun - dogum[0];
+            var ay = bugun.getMonth() + 1;
+            var hay = ay - dogum[1];
+            var hafta = 0;
+            var yıl = bugun.getFullYear();
+            var hyıl = yıl - dogum[2];
+
+            for (let i = 1; i <= hyıl; i++) {
+                hay = hay + 12
+                hgun = hay * 30
+            }
+            for (let i = 1; i <= hay; i++) {
+                hgun = hgun + 30
+
+            }
+            for (let i = 0; i <= hgun; i = i + 7) {
+                hafta++
+
+            }
+            console.log("ay " + hay)
+            console.log("gün " + hgun)
+            console.log("hafta " + hafta)
+        }
+
+        function aylar() {
+            var tarih = new Date();
+            var dogum = new Date(2000, 9, 22)
+            var aylar = ["ocak", "şubat", "mart", "nisan", "mayıs", "haziran", "temmuz", "ağustos", "eylül", "ekim", "kasım", "aralık"];
+            var gunler = ["pazar", "pazartesi", "salı", "çarşamba", "perşembe", "cuma", "cumartesi"];
+            console.log(aylar[tarih.getMonth()]);
+            console.log(tarih.getDay());
+
+            if (tarih < dogum) {
+                console.log("tarih buyuk")
+            } else {
+                console.log("dogum buyuk")
+            }
+
+            console.log(gunler[tarih.getDay()])
+        }
+
+        function mukemmel(m) {
+            var kalanlar = 0;
+            for (let i = 1; i < m; i++) {
+
+                if (m % i == 0) {
+                    kalanlar += i;
+                }
+            }
+            if (kalanlar == m) {
+                console.log("mukemmel sayıdır")
+            } else {
+                console.log("mukemmel sayı değildir")
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

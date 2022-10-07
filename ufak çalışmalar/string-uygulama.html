@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Uygulama</title>
+  </head>
+  <body>
+    <input type="text" onchange="onChangeİnputLenght()" id="input-1" />
+    <p id="p-1"></p>
+    <input type="text" onchange="onChangeİnputSearch()" id="input-2" />
+    <p id="p-2"></p>
+    <input type="text" onchange="onChangeİnputİndexof()" id="input-3" />
+    <p id="p-3"></p>
+    <input type="text" onchange="onChangeİnputSlice()" id="input-4" />
+    <p id="p-4"></p>
+    <input type="text" onchange="onChangeİnputSubstr()" id="input-5" />
+    <p id="p-5"></p>
+    <input type="text" onchange="onChangeİnputReplace()" id="input-6" />
+    <p id="p-6"></p>
+    <input type="text" onchange="onChangeİnputSplit()" id="input-7" />
+    <p id="p-7"></p>
+
+    <script>
+      function onChangeİnputLenght() {
+        var p1 = document.getElementById("p-1");
+        var input1 = document.getElementById("input-1").value;
+        var uzunluk = input1.length;
+        p1.innerHTML = uzunluk;
+      }
+      function onChangeİnputSearch() {
+        var p2 = document.getElementById("p-2");
+        var input2 = document.getElementById("input-2").value;
+        var anahtar = input2.search("merhaba");
+        if (anahtar >= 0) {
+          p2.innerHTML = "sanada merhaba";
+        } else {
+          p2.innerHTML = "merhaba demedin";
+        }
+      }
+      function onChangeİnputİndexof() {
+        var p3 = document.getElementById("p-3");
+        var input3 = document.getElementById("input-3").value;
+        var key1 = input3.indexOf("can");
+        var key2 = input3.lastIndexOf("can");
+        if (key1 == key2 && key1 !== -1) {
+          p3.innerHTML = "isim doğru";
+        } else {
+          p3.innerHTML = "birden fazla doğru isim giremezsin";
+        }
+      }
+      function onChangeİnputSlice() {
+        var p4 = document.getElementById("p-4");
+        var input4 = document.getElementById("input-4").value;
+        var ozet = input4.slice(5, 15);
+        p4.innerHTML = ozet;
+      }
+
+      function onChangeİnputSubstr() {
+        var p5 = document.getElementById("p-5");
+        var input5 = document.getElementById("input-5").value;
+        var substr = input5.substr(5, 5);
+        p5.innerText = substr;
+      }
+
+      function onChangeİnputReplace() {
+        var p6 = document.getElementById("p-6");
+        var input6 = document.getElementById("input-6").value;
+        var replace = input6.replace("mal", "***");
+        p6.innerText = replace;
+      }
+      function onChangeİnputSplit() {
+        var p7 = document.getElementById("p-7");
+        var input7 = document.getElementById("input-7").value;
+        var split = input7.split(" ");
+        p7.innerText = split;
+        console.log(split);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function ortalama(s1, s2) {
+        var vize = (s1 * 40) / 100;
+        var final = (s2 * 60) / 100;
+        var toplam = vize + final;
+        console.log(toplam);
+        if (toplam>=50 && s2>=50) {
+          console.log("geçtiniz");
+        } else if (toplam>=50 && s2<50) {
+          console.log("finalden kaldınız");
+        }else{
+            console.log("kaldınız");
+        }
+      }
+      function ortalama(s1, s2) {
+        var toplam =s1 * 0.4 + s2 * 0.6;
+        console.log(toplam);
+        if (toplam>=50 && s2>=50) {
+          console.log("geçtiniz");
+        } else if (toplam>=50 && s2<50) {
+          console.log("finalden kaldınız");
+        }else{
+            console.log("kaldınız");
+        }
+      }
+    </script>
+  </body>
+</html>
